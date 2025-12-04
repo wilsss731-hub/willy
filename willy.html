@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portofolio — Willy</title>
+    <meta name="description" content="Portofolio coding Willy — proyek, tentang, kontak." />
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #94a3b8;
+            --accent: #6ee7b7;
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 12px;
+            --maxw: 1100px;
+            --gap: 18px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, #071025 0%, #0b1220 60%);
+            color: #e6eef6
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 28px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #042029
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0
+        }
+
+        p.lead {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        nav {
+            display: flex;
+            gap: 12px
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 10px
+        }
+
+        nav a:hover {
+            background: var(--glass);
+            color: var(--accent)
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 22px;
+            margin-top: 28px;
+            align-items: center
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+        }
+
+        .intro h2 {
+            margin: 0 0 8px 0
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #1e293b, #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700
+        }
+
+        .contact-list {
+            width: 100%
+        }
+
+        .contact-list a {
+            display: block;
+            padding: 8px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.01);
+            margin-bottom: 8px
+        }
+
+        main {
+            margin-top: 26px
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap)
+        }
+
+        .proj {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            transition: transform .18s ease, box-shadow .18s ease
+        }
+
+        .proj:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6)
+        }
+
+        .proj .thumb {
+            height: 130px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #334155, #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #042029
+        }
+
+        .proj h3 {
+            margin: 10px 0 6px;
+            font-size: 16px
+        }
+
+        .proj p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .proj .meta {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, var(--accent), #60a5fa);
+            color: #022;
+            border: none
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.01);
+            color: var(--muted);
+            text-align: center
+        }
+
+        /* Responsive */
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .projects {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .avatar {
+                width: 160px;
+                height: 160px
+            }
+        }
+
+        @media (max-width:640px) {
+            .projects {
+                grid-template-columns: 1fr
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            nav {
+                order: 2;
+                width: 100%;
+                justify-content: space-between
+            }
+        }
+
+        /* small helpers */
+        .muted {
+            color: var(--muted)
+        }
+
+        .center {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">NW</div>
+                <div>
+                    <h1>Willy — Frontend Developer</h1>
+                    <p class="lead">Membuat UI sederhana, responsif, dan mudah dipakai.</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#projects">Proyek</a>
+                <a href="#about">Tentang</a>
+                <a href="#contact" class="primary">Kontak</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="card intro">
+                <h2>Halo — saya Willy</h2>
+                <p class="muted">Saya membuat website, aplikasi front-end, dan prototipe interaktif. Fokus pada HTML,
+                    CSS, dan JavaScript. Berikut beberapa proyek yang saya kerjakan.</p>
+
+                <div class="tags" aria-hidden>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive</span>
+                    <span class="tag">Accessibility</span>
+                </div>
+
+                <div style="margin-top:18px;display:flex;gap:12px">
+                    <a class="btn primary" href="#projects">Lihat Proyek</a>
+                    <a class="btn" href="#contact">Download CV</a>
+                </div>
+
+            </div>
+
+            <aside class="card me">
+                <div class="avatar">NW</div>
+                <div class="contact-list">
+                    <a href="#about">Tentang saya</a>
+                    <a href="#contact">Email: nowillie@example.com</a>
+                    <a href="#contact">LinkedIn / GitHub</a>
+                </div>
+            </aside>
+        </section>
+
+        <main>
+            <section id="projects" style="margin-top:22px">
+                <h2 style="margin-bottom:10px">Proyek Pilihan</h2>
+                <p class="muted">Ringkasan singkat proyek, teknologi, dan peran saya.</p>
+
+                <div class="projects" style="margin-top:14px">
+                    <!-- Project 1 -->
+                    <article class="proj">
+                        <div class="thumb">Website Toko</div>
+                        <h3>Web Toko — Responsive e‑commerce</h3>
+                        <p>Membuat halaman produk & keranjang sederhana. Fokus: HTML, CSS Grid, dan JavaScript untuk
+                            interaksi.</p>
+                        <div class="meta">
+                            <small class="muted">HTML • CSS • JS</small>
+                            <div>
+                                <a class="btn" href="#">Demo</a>
+                                <a class="btn" href="#">Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="proj">
+                        <div class="thumb">Dashboard</div>
+                        <h3>Dashboard Statistik</h3>
+                        <p>Prototype dashboard dengan filter data dan chart sederhana. Teknik: Flexbox + vanilla JS.</p>
+                        <div class="meta">
+                            <small class="muted">HTML • CSS • JS</small>
+                            <div>
+                                <a class="btn" href="#">Demo</a>
+                                <a class="btn" href="#">Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="proj">
+                        <div class="thumb">Blog</div>
+                        <h3>Personal Blog</h3>
+                        <p>Template blog sederhana yang mudah di-host. Termasuk optimasi teks dan layout untuk mobile.
+                        </p>
+                        <div class="meta">
+                            <small class="muted">HTML • CSS</small>
+                            <div>
+                                <a class="btn" href="#">Demo</a>
+                                <a class="btn" href="#">Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- More placeholder projects -->
+                    <article class="proj">
+                        <div class="thumb">Game</div>
+                        <h3>Mini Game Browser</h3>
+                        <p>Game edukasi kecil untuk latihan DOM & event handling.</p>
+                        <div class="meta"><small class="muted">HTML • JS</small>
+                            <div><a class="btn" href="#">Demo</a><a class="btn" href="#">Kode</a></div>
+                        </div>
+                    </article>
+
+                    <article class="proj">
+                        <div class="thumb">UI Kit</div>
+                        <h3>Komponen UI</h3>
+                        <p>Koleksi komponen kecil: tombol, kartu, form, dan notifikasi. Mudah dipakai ulang.</p>
+                        <div class="meta"><small class="muted">CSS • HTML</small>
+                            <div><a class="btn" href="#">Preview</a><a class="btn" href="#">Kode</a></div>
+                        </div>
+                    </article>
+
+                    <article class="proj">
+                        <div class="thumb">Animasi</div>
+                        <h3>Animasi Interaktif</h3>
+                        <p>Eksperimen micro-interactions menggunakan CSS & sedikit JS.</p>
+                        <div class="meta"><small class="muted">CSS • JS</small>
+                            <div><a class="btn" href="#">Demo</a><a class="btn" href="#">Kode</a></div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="about" style="margin-top:26px">
+                <h2>Tentang Saya</h2>
+                <div class="card" style="margin-top:10px">
+                    <p class="muted">Saya seorang pelajar/pemula yang tertarik pada pengembangan front-end. Saya suka
+                        membuat antarmuka yang rapi, mudah digunakan, dan cepat diakses. Saat ini saya berlatih HTML,
+                        CSS, dan JavaScript — serta bereksperimen dengan project kecil untuk mengasah kemampuan.</p>
+                    <ul style="margin-top:12px;color:var(--muted)">
+                        <li>Fokus pada clean code dan struktur HTML yang semantik.</li>
+                        <li>Mengutamakan pengalaman pengguna (UX) dan aksesibilitas.</li>
+                        <li>Suka belajar melalui project nyata dan kolaborasi.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact" style="margin-top:26px">
+                <h2>Kontak</h2>
+                <div class="card" style="margin-top:10px;display:grid;grid-template-columns:1fr 320px;gap:18px">
+                    <form
+                        onsubmit="event.preventDefault(); alert('Terima kasih! (form ini demo, tidak mengirim apa-apa)')">
+                        <label class="muted">Nama</label>
+                        <input required
+                            style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit"
+                            placeholder="Namamu" />
+                        <label class="muted" style="margin-top:10px;display:block">Email</label>
+                        <input required type="email"
+                            style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit"
+                            placeholder="email@example.com" />
+                        <label class="muted" style="margin-top:10px;display:block">Pesan</label>
+                        <textarea required
+                            style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit"
+                            rows="5" placeholder="Tulis pesanmu..."></textarea>
+                        <div style="margin-top:12px"><button class="btn primary" type="submit">Kirim Pesan</button>
+                        </div>
+                    </form>
+
+                    <aside class="muted">
+                        <h3>Detail Kontak</h3>
+                        <p>Email: nowillie@example.com</p>
+                        <p>Lokasi: Indonesia</p>
+                        <p>GitHub: github.com/nowillie (ganti dengan linkmu)</p>
+                    </aside>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            © <span id="year"></span> Willy — Portofolio. Dibuat dengan HTML & CSS.
+        </footer>
+    </div>
+
+    <script>
+        // small helpers
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            })
+        });
+    </script>
+</body>
+
+</html>
