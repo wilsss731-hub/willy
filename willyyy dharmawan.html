@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — Willy</title>
+  <meta name="description" content="Portofolio coding Willy — proyek, tentang, kontak." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#6ee7b7;--radius:12px;--maxw:1100px}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #0b1220 60%);color:#e6eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042029}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    nav{display:flex;gap:10px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:28px;align-items:start}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .avatar{width:200px;height:200px;border-radius:16px;background:linear-gradient(135deg,#1e293b,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700}
+    main{margin-top:26px}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .proj{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:transform .18s ease}
+    .proj:hover{transform:translateY(-6px)}
+    .thumb{height:120px;border-radius:8px;background:linear-gradient(135deg,#334155,#0ea5e9);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042029}
+    .meta{margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:#022;border:none}
+    footer{margin-top:30px;padding:18px;border-radius:12px;background:rgba(255,255,255,0.01);color:var(--muted);text-align:center}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.projects{grid-template-columns:repeat(2,1fr)}.avatar{width:160px;height:160px}}
+    @media (max-width:640px){.projects{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}nav{width:100%;justify-content:space-between}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">W</div>
+        <div>
+          <h1>Willy — Frontend Developer</h1>
+          <p class="lead">Membuat antarmuka yang rapi, responsif, dan mudah dipakai.</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Proyek</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact" class="primary">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Halo — saya Willy</h2>
+        <p style="color:var(--muted)">Saya membuat website, aplikasi front-end, dan prototipe interaktif. Fokus pada HTML, CSS, dan JavaScript. Berikut beberapa proyek yang saya kerjakan.</p>
+        <div class="tags" aria-hidden>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">Accessibility</span>
+        </div>
+        <div style="margin-top:18px;display:flex;gap:12px">
+          <a class="btn primary" href="#projects">Lihat Proyek</a>
+          <a class="btn" href="#contact">Download CV</a>
+        </div>
+      </div>
+
+      <aside class="card" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div class="avatar">W</div>
+        <div style="width:100%">
+          <a style="display:block;padding:8px;border-radius:8px;text-decoration:none;color:var(--muted);background:rgba(255,255,255,0.01);margin-bottom:8px" href="#about">Tentang saya</a>
+          <a style="display:block;padding:8px;border-radius:8px;text-decoration:none;color:var(--muted);background:rgba(255,255,255,0.01);margin-bottom:8px" href="mailto:willy@example.com">Email: willy@example.com</a>
+          <a style="display:block;padding:8px;border-radius:8px;text-decoration:none;color:var(--muted);background:rgba(255,255,255,0.01)" href="#contact">GitHub / LinkedIn</a>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <section id="projects" style="margin-top:22px">
+        <h2 style="margin-bottom:10px">Proyek Pilihan</h2>
+        <p style="color:var(--muted)">Ringkasan singkat proyek, teknologi, dan peran saya.</p>
+        <div class="projects" style="margin-top:14px">
+          <article class="proj card">
+            <div class="thumb">Web Toko</div>
+            <h3>Web Toko — Responsive e-commerce</h3>
+            <p style="color:var(--muted)">Halaman produk, keranjang, dan checkout sederhana. Fokus: HTML, CSS Grid & JS.</p>
+            <div class="meta"><small style="color:var(--muted)">HTML • CSS • JS</small><div><a class="btn" href="#">Demo</a> <a class="btn" href="#">Kode</a></div></div>
+          </article>
+
+          <article class="proj card">
+            <div class="thumb">Dashboard</div>
+            <h3>Dashboard Statistik</h3>
+            <p style="color:var(--muted)">Prototype dashboard dengan filter data dan chart sederhana.</p>
+            <div class="meta"><small style="color:var(--muted)">HTML • CSS • JS</small><div><a class="btn" href="#">Demo</a> <a class="btn" href="#">Kode</a></div></div>
+          </article>
+
+          <article class="proj card">
+            <div class="thumb">Blog</div>
+            <h3>Personal Blog</h3>
+            <p style="color:var(--muted)">Template blog sederhana yang dioptimasi untuk mobile.</p>
+            <div class="meta"><small style="color:var(--muted)">HTML • CSS</small><div><a class="btn" href="#">Demo</a> <a class="btn" href="#">Kode</a></div></div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:26px">
+        <h2>Tentang Saya</h2>
+        <div class="card" style="margin-top:10px">
+          <p style="color:var(--muted)">Saya pelajar/pemula yang tertarik pada pengembangan front-end. Saya berfokus pada code yang bersih, struktur HTML semantik, dan pengalaman pengguna yang baik.</p>
+          <ul style="color:var(--muted)">
+            <li>Semantik HTML & accessibility</li>
+            <li>Responsive design</li>
+            <li>Belajar lewat project nyata</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:26px">
+        <h2>Kontak</h2>
+        <div class="card" style="margin-top:10px;display:grid;grid-template-columns:1fr 320px;gap:18px">
+          <form onsubmit="event.preventDefault();alert('Terima kasih — ini demo, form tidak mengirim')">
+            <label style="color:var(--muted)">Nama</label>
+            <input required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit" placeholder="Namamu" />
+            <label style="color:var(--muted);margin-top:10px;display:block">Email</label>
+            <input required type="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit" placeholder="email@example.com" />
+            <label style="color:var(--muted);margin-top:10px;display:block">Pesan</label>
+            <textarea required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-top:6px;background:transparent;color:inherit" rows="5" placeholder="Tulis pesanmu..."></textarea>
+            <div style="margin-top:12px"><button class="btn primary" type="submit">Kirim Pesan</button></div>
+          </form>
+
+          <aside style="color:var(--muted)">
+            <h3>Detail Kontak</h3>
+            <p>Email: willy@example.com</p>
+            <p>Lokasi: Indonesia</p>
+            <p>GitHub: github.com/willy (ganti dengan linkmu)</p>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Willy — Portofolio. Dibuat dengan HTML & CSS.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
